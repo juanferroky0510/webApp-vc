@@ -111,12 +111,12 @@ function onResults(results) {
 
     // ↪ 90° derecha
     else if (thumbRight && fingersCount === 0) {
-        output.innerText = "90° derecha";
+        output.innerText = "90° izquierda";
     }
 
     // ↩ 90° izquierda
     else if (thumbLeft && fingersCount === 0) {
-        output.innerText = "90° izquierda";
+        output.innerText = "90° derecha";
     }
 
     // 🚶 Avanzar (1 dedo)

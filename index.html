@@ -3,36 +3,117 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Reconocimiento de Gestos</title>
+    <title>Control por Gestos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Control por Gestos</span>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🤖 Control por Gestos</a>
         </div>
     </nav>
 
-    <div class="container text-center mt-4">
-        <h2>Reconocimiento de Órdenes por Gestos</h2>
-        <button id="startBtn" class="btn btn-success mt-3">Empezar</button>
+    <div class="container my-5">
 
-        <div class="video-container mt-4">
-            <video id="video" autoplay playsinline></video>
+        <!-- INTRODUCCIÓN -->
+        <!-- CARD INFORMACIÓN -->
+<div class="card bg-dark text-white shadow-lg mb-5">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>¿De qué trata la aplicación?</h4>
+                <p>
+                    Esta aplicación permite controlar movimientos mediante gestos de la mano
+                    usando la cámara de la computadora. Utiliza visión artificial para
+                    detectar los dedos levantados y traducirlos en órdenes específicas.
+                </p>
+            </div>
+
+            <div class="col-md-6">
+                <h4>¿Cómo funciona?</h4>
+                <p>
+                    Al presionar el botón <strong>Empezar</strong>, se activa la cámara.
+                    El sistema analiza los puntos clave de la mano en tiempo real y
+                    reconoce los gestos según la cantidad de dedos levantados o la
+                    orientación del pulgar.
+                    <br><br>
+                    Si no detecta un gesto válido, mostrará:
+                    <strong>"Orden no reconocida"</strong>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- BOTÓN Y VIDEO -->
+        <div class="text-center mb-5">
+            <button id="startBtn" class="btn btn-success btn-lg px-4 shadow">
+                ▶ Empezar
+            </button>
+
+            <div class="video-container mt-4">
+                <video id="video" autoplay playsinline></video>
+            </div>
+
+            <h3 id="output" class="mt-4 text-primary fw-bold">
+                Esperando orden...
+            </h3>
         </div>
 
-        <h3 id="output" class="mt-4 text-primary">Esperando orden...</h3>
+        <!-- CARD DE COMANDOS -->
+        <div class="card shadow-lg">
+            <div class="card-header bg-dark text-white text-center">
+                <h4 class="mb-0">🖐 Comandos Disponibles</h4>
+            </div>
+            <div class="card-body">
+
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center align-middle">
+                        <tbody>
+                            <tr>
+                                <td>☝️<br><strong>Avanzar</strong><br>1 dedo arriba</td>
+                                <td>✌️<br><strong>Retroceder</strong><br>2 dedos arriba</td>
+                                <td>🤟<br><strong>Vuelta derecha</strong><br>3 dedos arriba</td>
+                            </tr>
+                            <tr>
+                                <td>🖖<br><strong>Vuelta izquierda</strong><br>4 dedos arriba</td>
+                                <td>👍➡️<br><strong>90° derecha</strong><br>Pulgar →</td>
+                                <td>👍⬅️<br><strong>90° izquierda</strong><br>Pulgar ←</td>
+                            </tr>
+                            <tr>
+                                <td>👎<br><strong>Detener</strong><br>Pulgar abajo</td>
+                                <td>🖐🔄<br><strong>360° derecha</strong><br>Palma visible</td>
+                                <td>🤚🔄<br><strong>360° izquierda</strong><br>Dorso visible</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
-    <footer class="bg-dark text-white text-center p-3 mt-5">
-        Programado por Juan Fer - 2026
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center p-4 mt-5">
+        <p class="mb-0">
+            Instituto Tecnológico de Pachuca - Juan Fernando Ortega Olvera - ITIC´s
+        </p>
     </footer>
 
+    <!-- MediaPipe -->
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+    <!-- Script -->
     <script src="assets/js/script.js"></script>
 
 </body>
